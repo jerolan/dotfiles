@@ -30,6 +30,7 @@ brew 'tmux'
 brew 'neovim/neovim/neovim'
 brew 'fzf'
 brew 'yarn'
+brew 'hub'
 
 cask 'adium'
 cask 'atom'
