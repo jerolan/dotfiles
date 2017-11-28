@@ -31,6 +31,7 @@ brew 'neovim/neovim/neovim'
 brew 'fzf'
 brew 'yarn'
 brew 'hub'
+brew 'htop'
 
 cask 'adium'
 cask 'atom'
