@@ -32,6 +32,7 @@ brew 'fzf'
 brew 'yarn'
 brew 'hub'
 brew 'htop'
+brew 'python3'
 
 cask 'adium'
 cask 'atom'
