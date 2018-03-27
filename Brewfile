@@ -33,6 +33,7 @@ brew 'yarn'
 brew 'hub'
 brew 'htop'
 brew 'elixir'
+brew 'awscli'
 
 cask 'adium'
 cask 'atom'

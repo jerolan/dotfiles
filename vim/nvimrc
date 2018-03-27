@@ -70,3 +70,6 @@ let g:gist_detect_filetype = 1
 
 "=== FZF
 nnoremap <c-t> :FZF<cr>
+
+"=== Monokai theme
+let g:molokai_original = 1
