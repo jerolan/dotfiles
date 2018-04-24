@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'puma/puma'
 
+breq 'wrk'
 brew 'ack'
 brew 'coreutils'
 brew 'grc'
