@@ -34,6 +34,7 @@ brew 'hub'
 brew 'htop'
 brew 'elixir'
 brew 'awscli'
+brew 'mas'
 
 cask 'adium'
 cask 'atom'
