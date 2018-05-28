@@ -66,3 +66,4 @@ cask 'qlstephen'
 cask 'qlprettypatch
 cask 'betterzip'
 cask 'qlvideo'
+cask 'filezilla'
