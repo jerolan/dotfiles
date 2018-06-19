@@ -27,7 +27,7 @@ brew 'wrk'
 brew 'youtube-dl'
 
 cask 'betterzip'
-cask 'epubquicklook
+cask 'epubquicklook'
 cask 'filezilla'
 cask 'garmin-express'
 cask 'google-chrome'
@@ -38,7 +38,7 @@ cask 'ngrok'
 cask 'qlcolorcode'
 cask 'qlimagesize'
 cask 'qlmarkdown'
-cask 'qlprettypatch
+cask 'qlprettypatch'
 cask 'qlstephen'
 cask 'qlvideo'
 cask 'quicklook-csv'
