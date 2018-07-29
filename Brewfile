@@ -17,6 +17,7 @@ brew 'libcaca', args: ['with-imlib2']
 brew 'libgit2'
 brew 'neovim/neovim/neovim'
 brew 'node@8'
+brew 'mongodb'
 brew 'opam'
 brew 'openssl'
 brew 'postgresql'
