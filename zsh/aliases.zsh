@@ -1,12 +1,3 @@
-alias reload!='. ~/.zshrc'
-alias ls="ls -la"
-alias vim="nvim"
-alias tns="tmux new -s"
-alias tks="tmux kill-session -t"
-alias tas="tmux attach -t"
-alias tls="tmux ls"
-alias ga="git add -A ."
-alias gc="git commit -m"
-alias gp="git push"
-alias cls='clear' # Good 'ol Clear Screen command
-alias git='hub'
+alias hyperc="vim ~/dotfiles/hyper/hyper.js"
+alias vimrc="vim ~/dotfiles/vim/nvimrc"
+alias zshrc="vim ~/dotfiles/zsh/zshrc"
