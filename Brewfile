@@ -14,6 +14,7 @@ brew 'postgresql'
 brew 'wget'
 brew 'wrk'
 brew 'zsh'
+brew 'wifi-password'
 
 cask 'filezilla'
 cask 'launchrocket'
