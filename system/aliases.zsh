@@ -1,3 +1,5 @@
+alias lip="ipconfig getifaddr en0" # Depends on your current network adapter
+
 # grc overides for ls
 #   Made possible through contributions from generous benefactors like
 #   `brew install coreutils`
