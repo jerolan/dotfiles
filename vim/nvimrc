@@ -1,0 +1,55 @@
+filetype off
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'w0rp/ale'
+
+call plug#end()
+
+syntax on
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set clipboard=unnamed
+set ttyfast
+set undolevels=200
+set encoding=utf-8
+set noswapfile
+set scrolloff=5
+set wildignore+=*.DS_Store
+set ignorecase
+set incsearch
+set nowrap
+set number
+set relativenumber
+set numberwidth=5
+set linespace=0
+set backspace=2
+set noshowmatch
+set laststatus=2
+set ruler
+set showcmd
+set clipboard=unnamed
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set smartindent
+set smarttab
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+
+"=== Strip whitespace :s
+au BufWritePre * :%s/\s\+$//e
+
+"=== Treat .vue as .html
+au BufNewFile,BufReadPost *.vue set filetype=javascript
+
+"=== Gutter background
+hi SignColumn ctermbg=none guibg=none
+
+"=== Custom ALE linters
+let g:ale_linters = {'javascript': ['standard']}
+
