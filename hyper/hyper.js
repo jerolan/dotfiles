@@ -43,6 +43,10 @@ module.exports = {
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
+    MaterialTheme: {
+      theme: 'Darker'
+    },
+
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
     // make sure to use a full path if the binary name doesn't work
@@ -80,7 +84,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-pane', 'hyper-subliminal'],
+  plugins: ['hyper-pane', 'hyper-material-theme'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
