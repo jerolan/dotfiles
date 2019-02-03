@@ -5,7 +5,7 @@
 module.exports = {
   config: {
     // updateChannel
-    updateChannel: 'canary',
+    updateChannel: 'stable',
 
     // lineHeight
     lineHeight: 1.4,
@@ -29,7 +29,9 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: ``,
+    termCSS: `
+      x-screen x-row { font-variant-ligatures: contextual; }
+    `,
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
@@ -84,10 +86,12 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-pane', 'hyper-material-theme'],
+  plugins: ['hyper-pane', 'hyper-subliminal'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [/*'/Users/jerolan/workspace/hyper-subliminal'*/]
+  localPlugins: [
+    /*'/Users/jerolan/workspace/hyper-subliminal'*/
+  ]
 };

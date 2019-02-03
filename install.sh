@@ -10,4 +10,5 @@ ln -sf $PWD/git/gitconfig ~/.gitconfig
 ln -sf $PWD/gradle/gradle.properties ~/.gradle/gradle.properties
 ln -sf $PWD/hyper/hyper.js ~/.hyper.js
 ln -sf $PWD/zsh/zshrc ~/.zshrc
+ln -sf $PWD/nvm/nvmrc ~/.nvmrc
 
