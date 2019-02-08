@@ -12,3 +12,5 @@ ln -sf $PWD/hyper/hyper.js ~/.hyper.js
 ln -sf $PWD/zsh/zshrc ~/.zshrc
 ln -sf $PWD/nvm/nvmrc ~/.nvmrc
 
+pip install virtualenv
+pip install virtualenvwrapper
