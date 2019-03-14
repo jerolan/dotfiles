@@ -3,7 +3,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
-Plug 'kristijanhusak/vim-hybrid-material'
 
 call plug#end()
 
@@ -54,7 +53,4 @@ hi SignColumn ctermbg=none guibg=none
 "=== Custom ALE linters
 let g:ale_linters = {'javascript': ['standard']}
 
-"=== Material Theme
-set background=dark
-colorscheme hybrid_material
 
