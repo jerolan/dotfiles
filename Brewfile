@@ -17,7 +17,6 @@ brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
-brew 'wifi-password'
 
 cask 'filezilla'
 cask 'launchrocket'
