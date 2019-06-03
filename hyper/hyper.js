@@ -17,13 +17,10 @@ module.exports = {
     fontFamily: 'Fira Code',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BEAM',
+    cursorShape: 'BLOCK',
 
     // set to true for blinking cursor
     cursorBlink: false,
-
-    // selectionColor
-    selectionColor: '#67769611',
 
     // custom css to embed in the main window
     css: '',
@@ -43,8 +40,18 @@ module.exports = {
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
+    // Plugin configs
+    // MaterialTheme: https://github.com/equinusocio/hyper-material-theme
+    /*
     MaterialTheme: {
-      theme: 'Darker'
+      theme: 'Darker',
+      vibrancy: 'dark'
+    },
+    */
+    // hyperborder: https://github.com/webmatze/hyperborder
+    hyperBorder: {
+      animate: true,
+      borderColors: ['#d75f87', '#ffd787']
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -84,12 +91,11 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyper-pane', 'hyper-subliminal'],
+  plugins: ['hyperborder', 'hypercwd', 'hyper-pane', 'hyper-tab-icons'],
+  // plugins: ['hyper-material-theme', 'hyper-seoul256']
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: [
-    /*'/Users/jerolan/workspace/hyper-subliminal'*/
-  ]
+  localPlugins: ['/Users/jerolan/workspace/hyper-seoul256']
 };
