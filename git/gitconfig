@@ -28,3 +28,6 @@
   #
   # Setting to git 2.0 default to suppress warning message
   default = simple
+[user]
+	name = jerolan
+	email = jerome.olvera@gmail.com
