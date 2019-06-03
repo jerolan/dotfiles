@@ -48,10 +48,11 @@ module.exports = {
       vibrancy: 'dark'
     },
     */
+
     // hyperborder: https://github.com/webmatze/hyperborder
     hyperBorder: {
       animate: true,
-      borderColors: ['#d75f87', '#ffd787']
+      borderColors: ['#F1A5AB', '#91C5D3', '#A9D0A4', '#FFE3A9']
     },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
@@ -91,11 +92,17 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ['hyperborder', 'hypercwd', 'hyper-pane', 'hyper-tab-icons'],
+  plugins: [
+    'hyperborder',
+    'hypercwd',
+    'hyper-pane',
+    'hyper-tab-icons',
+    'hyper-subliminal'
+  ]
   // plugins: ['hyper-material-theme', 'hyper-seoul256']
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: ['/Users/jerolan/workspace/hyper-seoul256']
+  // localPlugins: ['/Users/jerolan/workspace/hyper-seoul256']
 };
