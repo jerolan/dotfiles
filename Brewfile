@@ -20,7 +20,6 @@ brew 'wrk'
 brew 'zsh'
 
 cask 'filezilla'
-cask 'launchrocket'
 cask 'ngrok'
 cask 'switchhosts'
 cask 'java8'
