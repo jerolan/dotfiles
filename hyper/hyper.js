@@ -8,13 +8,13 @@ module.exports = {
     updateChannel: 'stable',
 
     // lineHeight
-    lineHeight: 1.4,
+    lineHeight: 1.5,
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 15,
 
     // font family with optional fallbacks
-    fontFamily: 'Fira Code',
+    fontFamily: 'Fantasque Sans Mono',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
