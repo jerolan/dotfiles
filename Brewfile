@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'koekeishiya/formulae'
 
 brew 'awscli'
 brew 'bat'
@@ -18,6 +19,8 @@ brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
+brew 'yabai'
+brew 'koekeishiya/formulae/skhd'
 
 cask 'filezilla'
 cask 'ngrok'

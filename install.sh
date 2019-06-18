@@ -11,6 +11,8 @@ ln -sf $PWD/gradle/gradle.properties ~/.gradle/gradle.properties
 ln -sf $PWD/hyper/hyper.js ~/.hyper.js
 ln -sf $PWD/zsh/zshrc ~/.zshrc
 ln -sf $PWD/nvm/nvmrc ~/.nvmrc
+ln -sf $PWD/yabai/skhdrc ~/.skhdrc
+ln -sf $PWD/yabai/yabairc ~/.yabairc
 
 pip install virtualenv
 pip install virtualenvwrapper
