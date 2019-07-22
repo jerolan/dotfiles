@@ -84,6 +84,8 @@ module.exports = {
     // bellSoundURL: 'https://archive.org/download/ANDHISNAMEISJOHNCENAWhoAreBassbeasts/AND%20HIS%20NAME%20IS%20JOHN%20CENA%20%5BWho%20are%20bassbeasts%5D.mp3'
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    // if true, Hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
   },
 
   // a list of plugins to fetch and install from npm
