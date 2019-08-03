@@ -1,4 +1,1 @@
-# Load rbenv automatically by appending
-# the following to ~/.zshrc:
-
-eval "$(rbenv init -)"
+source $HOME/.rvm/scripts/rvm
