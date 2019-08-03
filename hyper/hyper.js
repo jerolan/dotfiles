@@ -70,14 +70,10 @@ module.exports = {
     env: {},
 
     // set to false for no bell
-    bell: 'SOUND',
+    bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
-
-    // if true, on right click selected text will be copied or pasted if no
-    // selection is present (true by default on Windows)
-    // quickEdit: true
+    copyOnSelect: false,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -95,12 +91,13 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyperborder',
+    /* 'hyperborder', */
     'hypercwd',
     'hyper-pane',
     'hyper-tab-icons',
     'hyper-subliminal'
   ]
+
   // plugins: ['hyper-material-theme', 'hyper-seoul256']
 
   // in development, you can create a directory under
