@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'prisma/prisma'
 
 brew 'awscli'
 brew 'bat'
@@ -17,6 +18,7 @@ brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
+brew 'prisma'
 
 cask 'adoptopenjdk8'
 cask 'filezilla'
