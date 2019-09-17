@@ -42,12 +42,10 @@ module.exports = {
 
     // Plugin configs
     // MaterialTheme: https://github.com/equinusocio/hyper-material-theme
-    /*
     MaterialTheme: {
       theme: 'Darker',
-      vibrancy: 'dark'
+      vibrancy: 'ultra-dark'
     },
-    */
 
     // hyperborder: https://github.com/webmatze/hyperborder
     hyperBorder: {
