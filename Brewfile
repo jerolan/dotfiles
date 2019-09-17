@@ -20,6 +20,7 @@ brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
 brew 'prisma'
+brew 'starship'
 
 cask 'adoptopenjdk8'
 cask 'filezilla'
