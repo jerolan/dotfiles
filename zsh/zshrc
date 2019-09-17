@@ -60,14 +60,5 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# flutter
-export PATH="$PATH:`pwd`/flutter/bin"
-
 # echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrcexport PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Add Rustup
-export PATH="$HOME/.cargo/bin:$PATH"
