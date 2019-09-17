@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'prisma/prisma'
 
+brew 'dep'
 brew 'awscli'
 brew 'bat'
 brew 'coreutils'
