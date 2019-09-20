@@ -1,5 +1,6 @@
 cask_args appdir: '/Applications'
 
+tap 'cjbassi/gotop'
 tap 'homebrew/bundle'
 tap 'prisma/prisma'
 
@@ -9,7 +10,7 @@ brew 'bat'
 brew 'coreutils'
 brew 'fzf'
 brew 'grc'
-brew 'htop'
+brew 'gotop'
 brew 'hub'
 brew 'neovim'
 brew 'nvm'
