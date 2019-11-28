@@ -1,9 +1,9 @@
 cask_args appdir: '/Applications'
 
 tap 'cjbassi/gotop'
+tap 'dteoh/sqa'
 tap 'homebrew/bundle'
 tap 'prisma/prisma'
-tap 'dteoh/sqa'
 
 brew 'awscli'
 brew 'bat'
@@ -22,11 +22,11 @@ brew 'postgres'
 brew 'prisma'
 brew 'redis'
 brew 'starship'
+brew 'terraforming'
 brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
-brew 'terraforming'
 
 cask 'adoptopenjdk8'
 cask 'coconutbattery'
