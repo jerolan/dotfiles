@@ -26,6 +26,7 @@ brew 'terraforming'
 brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
+brew 'yarn'
 brew 'zsh'
 
 cask 'adoptopenjdk8'
