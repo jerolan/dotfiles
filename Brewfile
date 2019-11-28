@@ -26,6 +26,7 @@ brew 'wget'
 brew 'wifi-password'
 brew 'wrk'
 brew 'zsh'
+brew 'terraforming'
 
 cask 'adoptopenjdk8'
 cask 'coconutbattery'
