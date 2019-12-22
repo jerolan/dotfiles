@@ -65,3 +65,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Starship
 eval "$(starship init zsh)"
+
+# Pyenv
+eval "$(pyenv init -)"
