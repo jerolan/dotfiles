@@ -31,3 +31,5 @@
 [user]
 	name = jerolan
 	email = jerome.olvera@gmail.com
+[fetch]
+	prune = true
