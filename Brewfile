@@ -49,6 +49,7 @@ cask 'appcleaner'
 cask 'imageoptim'
 cask 'kitematic'
 cask 'virtualbox'
+cask 'amethyst'
 
 mas 'Trello'
 mas 'Xcode'
