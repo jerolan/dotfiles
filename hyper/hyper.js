@@ -94,7 +94,7 @@ module.exports = {
     'hyper-pane',
     'hyper-tab-icons',
     'hyper-night-owl'
-  ]
+  ],
 
   // plugins: ['hyperborder', 'hyper-material-theme', 'hyper-subliminal', 'hyper-seoul256']
 
