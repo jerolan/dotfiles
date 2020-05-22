@@ -93,7 +93,8 @@ module.exports = {
     'hypercwd',
     'hyper-pane',
     'hyper-tab-icons',
-    'hyper-night-owl'
+    // 'hyper-night-owl'
+    'shades-of-purple-hyper',
   ],
 
   // plugins: ['hyperborder', 'hyper-material-theme', 'hyper-subliminal', 'hyper-seoul256']
