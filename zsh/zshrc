@@ -68,3 +68,6 @@ eval "$(starship init zsh)"
 
 # Pyenv
 eval "$(pyenv init -)"
+
+# Gvm
+[[ -s "/Users/jerolan/.gvm/scripts/gvm" ]] && source "/Users/jerolan/.gvm/scripts/gvm"
