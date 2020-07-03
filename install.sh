@@ -19,5 +19,9 @@ pip install virtualenv
 # Install Rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-# Go version manager
-bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# Install go version manager
+zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+
+# Install google cloud
+curl https://sdk.cloud.google.com > install.sh
+zsh install.sh --disable-prompts
