@@ -1,5 +1,6 @@
 brew tap Homebrew/bundle
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
+brew tap mongodb/brew
 brew bundle
 
 mkdir ~/.config/mvim
@@ -13,11 +14,14 @@ ln -sf $PWD/hyper/hyper.js ~/.hyper.js
 ln -sf $PWD/zsh/zshrc ~/.zshrc
 # ln -sf $PWD/node/nvmrc ~/.nvmrc
 
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | zsh
+
 # Install python virtualenv
 pip install virtualenv
 
 # Install Rustup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | zsh
 
 # Install go version manager
 zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
@@ -25,3 +29,7 @@ zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binsc
 # Install google cloud
 curl https://sdk.cloud.google.com > install.sh
 zsh install.sh --disable-prompts
+
+# MacOS Tweeks
+## disable mouse acceleration
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
