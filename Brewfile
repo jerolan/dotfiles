@@ -32,6 +32,7 @@ brew 'wrk'
 brew 'zsh'
 
 cask 'adoptopenjdk8'
+cask 'android-studio'
 cask 'appcleaner'
 cask 'brave-browser'
 cask 'chormium'
