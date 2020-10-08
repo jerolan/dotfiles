@@ -61,7 +61,7 @@ cask 'postman'
 cask 'robo-3t'
 cask 'slack'
 cask 'spotify'
-cask 'tandem'
+cask 'transmission'
 cask 'virtualbox'
 cask 'visual-studio-code'
 
