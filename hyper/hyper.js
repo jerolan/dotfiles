@@ -7,14 +7,23 @@ module.exports = {
     // updateChannel
     updateChannel: 'stable',
 
-    // lineHeight
-    lineHeight: 1.4,
-
     // default font size in pixels for all tabs
     fontSize: 14,
 
     // font family with optional fallbacks
-    fontFamily: "'SF Mono', monospace",
+    fontFamily: '"SF Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
+
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // lineHeight
+    lineHeight: 1.4,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
@@ -58,7 +67,7 @@ module.exports = {
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
-    shell: '/usr/local/bin/zsh',
+    shell: '',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -70,16 +79,29 @@ module.exports = {
     // set to false for no bell
     bell: false,
 
-    // if true, selected text will automatically be copied to the clipboard
+    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
+
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
+
+    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
+    // selection is present (`true` by default on Windows and disables the context menu feature)
+    quickEdit: false,
+
+    // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
+    // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
+    // (inside tmux or vim with mouse mode enabled for example).
+    macOptionSelectionMode: 'vertical',
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
-    // bellSoundURL: 'https://archive.org/download/ANDHISNAMEISJOHNCENAWhoAreBassbeasts/AND%20HIS%20NAME%20IS%20JOHN%20CENA%20%5BWho%20are%20bassbeasts%5D.mp3'
+
+    // Whether to use the WebGL renderer. Set it to false to use canvas-based
+    // rendering (slower, but supports transparent backgrounds)
+    webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
-    // if true, Hyper will be set as the default protocol client for SSH
-    defaultSSHApp: true,
   },
 
   // a list of plugins to fetch and install from npm
