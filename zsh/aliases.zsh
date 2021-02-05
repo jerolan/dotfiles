@@ -5,12 +5,8 @@ alias brew_outdated_all="echo 'updating brew' && \
 	echo 'brew outdated lisk' && \
 	brew outdated && \
 	echo 'brew outdated --cask' && \
-	brew cask outdated && \
-	echo 'mas outdated lisk' && \
-	mas outdated"
+	brew outdated --cask"
 alias brew_upgrade_all="echo 'upgrade brew' && \
 	brew upgrade && \
 	echo 'cask upgrade' && \
-	brew cask upgrade && \
-	echo 'mas upgrade' && \
-	mas upgrade"
+	brew cask upgrade"

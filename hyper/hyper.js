@@ -8,19 +8,16 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: '"SF Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Dank Mono", "Monaco", Consolas, monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
-    // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: 'bold',
-
     // lineHeight
-    lineHeight: 1.4,
+    lineHeight: 1.44,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -49,21 +46,6 @@ module.exports = {
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
-    // Plugin configs
-    // MaterialTheme: https://github.com/equinusocio/hyper-material-theme
-    MaterialTheme: {
-      theme: 'Darker',
-      vibrancy: 'ultra-dark'
-    },
-
-    // hyperborder: https://github.com/webmatze/hyperborder
-    hyperBorder: {
-      animate: true,
-      borderColors: ['#F1A5AB', '#91C5D3', '#A9D0A4', '#FFE3A9']
-    },
-
-    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
-    // if left empty, your system's login shell will be used by default
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
@@ -115,14 +97,11 @@ module.exports = {
     'hypercwd',
     'hyper-pane',
     'hyper-tab-icons',
-    // 'hyper-night-owl'
-    'shades-of-purple-hyper',
+    'hyper-overnight-slumber',
   ],
 
-  // plugins: ['hyperborder', 'hyper-material-theme', 'hyper-subliminal', 'hyper-seoul256']
-
   // in development, you can create a directory under
-  // `~/.hyper_plugins/local/` and include it here
+  // ``~/.hyper_plugins/local/`` and include it here
   // to load it and avoid it being `npm install`ed
-  // localPlugins: ['/Users/jerolan/workspace/hyper-seoul256']
+  // localPlugins: [],
 };
