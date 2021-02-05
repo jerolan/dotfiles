@@ -5,8 +5,6 @@ tap 'dteoh/sqa'
 tap 'heroku/brew'
 tap 'homebrew/bundle'
 tap 'mongodb/brew'
-tap 'prisma/prisma'
-
 
 brew 'awscli'
 brew 'bat'
