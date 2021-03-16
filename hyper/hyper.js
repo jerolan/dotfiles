@@ -8,16 +8,16 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 18,
+    fontSize: 15,
 
     // font family with optional fallbacks
     fontFamily: '"Dank Mono", "Monaco", Consolas, monospace',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'normal',
+    fontWeight: 'bold',
 
     // lineHeight
-    lineHeight: 1.44,
+    lineHeight: 1.2,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
