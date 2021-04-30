@@ -8,16 +8,16 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 15,
+    fontSize: 18,
 
     // font family with optional fallbacks
     fontFamily: '"Dank Mono", "Monaco", Consolas, monospace',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'bold',
+    fontWeight: 'normal',
 
     // lineHeight
-    lineHeight: 1.2,
+    lineHeight: 1.25,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -44,7 +44,7 @@ module.exports = {
     showWindowControls: '',
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    padding: '20px',
 
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
