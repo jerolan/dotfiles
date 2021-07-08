@@ -8,16 +8,16 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 18,
+    fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Dank Mono", "Monaco", Consolas, monospace',
+    fontFamily: '"Iosevka", "Dank Mono", "Monaco", Consolas, monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
 
     // lineHeight
-    lineHeight: 1.25,
+    lineHeight: 1.2,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -84,6 +84,10 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    gruvboxTheme: {
+      style: 'dark', // or 'light'
+      contrast: 'normal', // or 'soft', 'hard'
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -97,7 +101,7 @@ module.exports = {
     'hypercwd',
     'hyper-pane',
     'hyper-tab-icons',
-    'hyper-overnight-slumber',
+    'hyperterm-gruvbox',
   ],
 
   // in development, you can create a directory under
