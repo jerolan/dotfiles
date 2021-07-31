@@ -29,8 +29,14 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
+# autoload -U compinit
+# compinit
+autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -48,26 +54,3 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrcexport PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-
-# Starship
-eval "$(starship init zsh)"
-
-# Pyenv
-eval "$(pyenv init -)"
-
-# Gvm
-[[ -s "~/.gvm/scripts/gvm" ]] && source "/Users/jerolan/.gvm/scripts/gvm"

@@ -5,6 +5,9 @@ path = ~/.gitconfig.local
 protocol = ssh
 [alias]
 co = checkout
+promote = !$ZSH/bin/git-promote
+wtf = !$ZSH/bin/git-wtf
+rank-contributors = !$ZSH/bin/git-rank-contributors
 count = !git shortlog -sn
 [color]
 diff = auto
@@ -13,7 +16,7 @@ branch = auto
 ui = true
 [core]
 excludesfile = ~/.gitignore
-editor = code --wait
+editor = vim
 [apply]
 whitespace = nowarn
 [mergetool]
@@ -28,5 +31,5 @@ autocorrect = 1
 #
 # Setting to git 2.0 default to suppress warning message
 default = simple
-[fetch]
-prune = true
+[credential]
+helper = osxkeychain

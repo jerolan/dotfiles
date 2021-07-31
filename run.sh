@@ -1,6 +1,4 @@
 brew tap Homebrew/bundle
-brew tap homebrew/cask-versions
-brew tap mongodb/brew
 brew bundle
 
 mkdir ~/.config/mvim
@@ -26,6 +24,12 @@ zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binsc
 curl https://sdk.cloud.google.com >install.sh
 zsh install.sh --disable-prompts
 
-# MacOS Tweeks
-## disable mouse acceleration
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
+# # TODO
+# # Run all dotfiles installers.
+
+# set -e
+
+# cd "$(dirname $0)"/..
+
+# # find the installers and run them iteratively
+# find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
