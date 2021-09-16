@@ -17,7 +17,7 @@ module.exports = {
     fontWeight: "normal",
 
     // lineHeight
-    lineHeight: 1.625,
+    lineHeight: 1.375,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
