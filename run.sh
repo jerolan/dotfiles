@@ -20,10 +20,6 @@ pip install virtualenv
 # Install go version manager
 zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 
-# Install google cloud
-curl https://sdk.cloud.google.com >install.sh
-zsh install.sh --disable-prompts
-
 # # TODO
 # # Run all dotfiles installers.
 
