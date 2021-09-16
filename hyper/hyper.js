@@ -5,7 +5,7 @@
 module.exports = {
   config: {
     // updateChannel
-    updateChannel: 'stable',
+    updateChannel: "stable",
 
     // default font size in pixels for all tabs
     fontSize: 16,
@@ -14,46 +14,46 @@ module.exports = {
     fontFamily: '"Iosevka", "Dank Mono", "Monaco", Consolas, monospace',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: 'normal',
+    fontWeight: "normal",
 
     // lineHeight
-    lineHeight: 1.2,
+    lineHeight: 1.625,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-    cursorShape: 'BLOCK',
+    cursorShape: "BLOCK",
 
     // set to true for blinking cursor
     cursorBlink: false,
 
     // custom css to embed in the main window
-    css: '',
+    css: "",
 
     // custom css to embed in the terminal window
     termCSS: ``,
 
     // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
     // default: `false` on Linux, `true` on Windows (ignored on macOS)
-    showHamburgerMenu: '',
+    showHamburgerMenu: "",
 
     // set to `false` if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` on windows and Linux (ignored on macOS)
-    showWindowControls: '',
+    showWindowControls: "",
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '20px',
+    padding: "20px",
 
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instead of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
-    shell: '',
+    shell: "",
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
-    shellArgs: ['--login'],
+    shellArgs: ["--login"],
 
     // for environment variables
     env: {},
@@ -74,7 +74,7 @@ module.exports = {
     // choose either `'vertical'`, if you want the column mode when Option key is hold during selection (Default)
     // or `'force'`, if you want to force selection regardless of whether the terminal is in mouse events mode
     // (inside tmux or vim with mouse mode enabled for example).
-    macOptionSelectionMode: 'vertical',
+    macOptionSelectionMode: "vertical",
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
@@ -82,12 +82,6 @@ module.exports = {
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
-
-    // for advanced config flags please refer to https://hyper.is/#cfg
-    gruvboxTheme: {
-      style: 'dark', // or 'light'
-      contrast: 'normal', // or 'soft', 'hard'
-    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -97,11 +91,11 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyper-search',
-    'hypercwd',
-    'hyper-pane',
-    'hyper-tab-icons',
-    'hyperterm-gruvbox',
+    "hyper-search",
+    "hypercwd",
+    "hyper-pane",
+    "hyper-tab-icons",
+    "hyper-dracula",
   ],
 
   // in development, you can create a directory under
