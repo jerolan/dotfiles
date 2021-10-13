@@ -11,13 +11,13 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Iosevka", "Dank Mono", "Monaco", Consolas, monospace',
+    fontFamily: '"Fira Code", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
 
     // lineHeight
-    lineHeight: 1.375,
+    lineHeight: 1.75,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
