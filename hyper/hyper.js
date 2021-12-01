@@ -8,13 +8,16 @@ module.exports = {
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 15,
 
     // font family with optional fallbacks
     fontFamily: '"Fira Code", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
+
+    // default font weight: 'normal' or 'bold'
+    fontWeightBold: "normal",
 
     // lineHeight
     lineHeight: 1.75,
@@ -95,7 +98,7 @@ module.exports = {
     "hypercwd",
     "hyper-pane",
     "hyper-tab-icons",
-    "hyper-dracula",
+    "hyper-rose-pine",
   ],
 
   // in development, you can create a directory under
