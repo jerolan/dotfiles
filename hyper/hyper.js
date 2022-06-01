@@ -1,17 +1,16 @@
 // Future versions of Hyper may add additional config options,
 // which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
-
 module.exports = {
   config: {
     // updateChannel
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 15,
+    fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Fira Code", monospace',
+    fontFamily: '"Dank Mono", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
@@ -20,7 +19,7 @@ module.exports = {
     fontWeightBold: "normal",
 
     // lineHeight
-    lineHeight: 1.75,
+    lineHeight: 1.5,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -85,6 +84,13 @@ module.exports = {
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
+
+    // hyper-rose-pine theme
+    theme: {
+      // Default: core
+      // Can be core, moon or dawn
+      variant: "core",
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -98,7 +104,7 @@ module.exports = {
     "hypercwd",
     "hyper-pane",
     "hyper-tab-icons",
-    "hyper-rose-pine",
+    "hyper-pmndrs",
   ],
 
   // in development, you can create a directory under
