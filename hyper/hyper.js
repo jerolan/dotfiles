@@ -10,7 +10,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Dank Mono", monospace',
+    fontFamily: '"Iosevka Comfy", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
@@ -84,13 +84,6 @@ module.exports = {
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
-
-    // hyper-rose-pine theme
-    theme: {
-      // Default: core
-      // Can be core, moon or dawn
-      variant: "core",
-    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -104,7 +97,7 @@ module.exports = {
     "hypercwd",
     "hyper-pane",
     "hyper-tab-icons",
-    "hyper-pmndrs",
+    "hyper-rose-pine",
   ],
 
   // in development, you can create a directory under
