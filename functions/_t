@@ -1,0 +1,4 @@
+#compdef t
+_files -W $TEST_PROJECTS -/
+
+# See further documentation in `functions/t`.
