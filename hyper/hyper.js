@@ -7,7 +7,7 @@ module.exports = {
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 16,
+    fontSize: 18,
 
     // font family with optional fallbacks
     fontFamily: '"Iosevka Comfy", monospace',
@@ -84,6 +84,11 @@ module.exports = {
     // Whether to use the WebGL renderer. Set it to false to use canvas-based
     // rendering (slower, but supports transparent backgrounds)
     webGLRenderer: true,
+
+    gruvboxTheme: {
+      style: "dark", // or 'light'
+      contrast: "normal", // or 'soft', 'hard'
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -97,7 +102,7 @@ module.exports = {
     "hypercwd",
     "hyper-pane",
     "hyper-tab-icons",
-    "hyper-rose-pine",
+    "hyperterm-gruvbox",
   ],
 
   // in development, you can create a directory under
