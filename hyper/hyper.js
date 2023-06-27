@@ -102,7 +102,7 @@ module.exports = {
     "hypercwd",
     "hyper-pane",
     "hyper-tab-icons",
-    "hyperterm-gruvbox",
+    "hyper-dracula",
   ],
 
   // in development, you can create a directory under
