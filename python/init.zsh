@@ -1,3 +1,2 @@
-# Pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# Pipenv
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
