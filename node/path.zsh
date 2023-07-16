@@ -2,4 +2,4 @@
 eval "$(fnm env)"
 
 # setup github copilot
-eval "$(npx github-copilot-cli alias -- "$0")"
+eval "$(github-copilot-cli alias -- "$0")"
