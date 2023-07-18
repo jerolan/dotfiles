@@ -10,7 +10,7 @@ module.exports = {
     fontSize: 18,
 
     // font family with optional fallbacks
-    fontFamily: '"Liga SF Mono Nerd Font", monospace',
+    fontFamily: 'Liga SFMono Nerd Font',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
