@@ -7,10 +7,10 @@ module.exports = {
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 18,
+    fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: 'Liga SFMono Nerd Font',
+    fontFamily: "Liga SFMono Nerd Font",
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
@@ -19,7 +19,7 @@ module.exports = {
     fontWeightBold: "normal",
 
     // lineHeight
-    lineHeight: 1.5,
+    lineHeight: 1.8,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
