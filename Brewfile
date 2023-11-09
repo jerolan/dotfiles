@@ -1,8 +1,6 @@
 cask_args appdir: '/Applications'
 
 tap 'cjbassi/gotop'
-tap 'dteoh/sqa'
-tap 'heroku/brew'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-fonts'
 tap 'mongodb/brew'
@@ -36,6 +34,7 @@ brew 'wifi-password'
 brew 'wrk'
 brew 'xxh'
 brew 'zsh'
+brew 'ffmpeg'
 
 cask 'adoptopenjdk8'
 cask 'appcleaner'
