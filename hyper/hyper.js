@@ -7,7 +7,7 @@ module.exports = {
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 16,
 
     // font family with optional fallbacks
     fontFamily: "Fantasque Sans Mono",
@@ -19,7 +19,7 @@ module.exports = {
     fontWeightBold: "normal",
 
     // lineHeight
-    lineHeight: 1.8,
+    lineHeight: 1.6,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
