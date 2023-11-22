@@ -1,6 +1,3 @@
-## disable mouse acceleration
-defaults write .GlobalPreferences com.apple.mouse.scaling -1
-
 # Always open everything in Finder's list view.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
@@ -14,3 +11,6 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Disable Credential Security Support Provider (CredSSP) authentication for Microsoft Remote Desktop.
+defaults write com.microsoft.rdc.macos ClientSettings.EnforceCredSSPSupport 0
