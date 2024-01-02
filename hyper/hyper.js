@@ -10,7 +10,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: "Fantasque Sans Mono",
+    fontFamily: "'Fantasque Sans Mono', monospace",
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "normal",
