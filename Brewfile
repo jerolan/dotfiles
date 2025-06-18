@@ -6,6 +6,7 @@ tap 'shaunsingh/SFMono-Nerd-Font-Ligaturized'
 
 brew 'awscli'
 brew 'bat'
+brew 'cloud-nuke'
 brew 'cocoapods'
 brew 'coreutils'
 brew 'fastlane'
