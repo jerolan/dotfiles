@@ -1,8 +1,6 @@
 # Local/private config goes in the include
 [include]
 path = ~/.gitconfig.local
-[hub]
-protocol = ssh
 [alias]
 co = checkout
 promote = !$ZSH/bin/git-promote
@@ -16,7 +14,7 @@ branch = auto
 ui = true
 [core]
 excludesfile = ~/.gitignore
-editor = vim
+editor = code --wait
 autocrlf = input
 [apply]
 whitespace = nowarn
