@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# Usage: hashcmp [sha256|sha1|sha512|md5] <file1> <file2>
+# Description: Compara el hash de dos archivos usando la mejor herramienta disponible (openssl/shasum/*sum/md5).
+# Works on: macOS, Linux, BusyBox, zsh, bash, sh.
+#
+hashcmp () {
+    # algoritmo por defecto
+    algo=sha256
+    case "$1" in
+        sha1|sha256|sha512|md5) algo="$1"; shift ;;
+    esac
+
+    f1="$1"; f2="$2"
+
+    if [ -z "$f1" ] || [ -z "$f2" ] || [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+        echo "Uso: hashcmp [sha256|sha1|sha512|md5] <file1> <file2>"
+        return 2
+    fi
+    if [ ! -f "$f1" ] || [ ! -f "$f2" ]; then
+        echo "Archivo inválido: asegúrate de que ambos existen."
+        return 2
+    fi
+
+    # helper: imprime solo el digest
+    _hash_of () {
+        _algo="$1"; _file="$2"
+
+        # 1) OpenSSL (macOS/Linux)
+        if command -v openssl >/dev/null 2>&1; then
+            _cmd="$_algo"
+            [ "$_algo" = "md5" ] && _cmd="md5"
+            openssl dgst -"$_cmd" -r -- "$_file" 2>/dev/null | awk '{print $1}'
+            return
+        fi
+
+        # 2) shasum / *sum (Linux/macOS)
+        case "$_algo" in
+            sha1|sha256|sha512)
+                if command -v shasum >/dev/null 2>&1; then
+                    _bits=1; [ "$_algo" = "sha256" ] && _bits=256; [ "$_algo" = "sha512" ] && _bits=512
+                    shasum -a "$_bits" -- "$_file" 2>/dev/null | awk '{print $1}'
+                    return
+                fi
+                if command -v sha1sum >/dev/null 2>&1 && [ "$_algo" = "sha1" ]; then sha1sum -- "$_file" | awk '{print $1}'; return; fi
+                if command -v sha256sum >/dev/null 2>&1 && [ "$_algo" = "sha256" ]; then sha256sum -- "$_file" | awk '{print $1}'; return; fi
+                if command -v sha512sum >/dev/null 2>&1 && [ "$_algo" = "sha512" ]; then sha512sum -- "$_file" | awk '{print $1}'; return; fi
+            ;;
+            md5)
+                if command -v md5sum >/dev/null 2>&1; then md5sum -- "$_file" 2>/dev/null | awk '{print $1}'; return; fi
+                if command -v md5 >/dev/null 2>&1; then md5 -q -- "$_file" 2>/dev/null; return; fi
+            ;;
+        esac
+
+        # sin herramienta compatible
+        echo ""
+    }
+
+    h1=$(_hash_of "$algo" "$f1")
+    h2=$(_hash_of "$algo" "$f2")
+
+    if [ -z "$h1" ] || [ -z "$h2" ]; then
+        echo "No encontré una herramienta para '$algo'. Instala openssl/shasum/sha256sum/md5sum."
+        return 127
+    fi
+
+    if [ "$h1" = "$h2" ]; then
+        echo "MATCH ($algo)  $h1"
+        return 0
+    else
+        echo "DIFFER ($algo)"
+        echo "$f1: $h1"
+        echo "$f2: $h2"
+        return 1
+    fi
+}
