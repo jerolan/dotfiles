@@ -1,3 +1,6 @@
+
+[[ "$DISABLE_AUTO_TITLE" == "true" ]] && return
+
 # From http://dotfiles.org/~_why/.zshrc
 # Sets the window title nicely no matter where you are
 function title() {
