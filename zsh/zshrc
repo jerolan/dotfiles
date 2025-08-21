@@ -7,6 +7,15 @@ export PROJECTS=~/workspace
 # your project folder that we can `t [tab]` to
 export TEST_PROJECTS=~/testspace
 
+# Disable automatic title
+export DISABLE_AUTO_TITLE="true"
+export ZSH_DISABLE_COMPFIX="true"
+
+# zsh-autosuggestions 
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+export ZSH_AUTOSUGGEST_STRATEGY=(history)
+
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
