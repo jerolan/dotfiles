@@ -1,7 +1,5 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/bundle'
-tap 'homebrew/cask-fonts'
 tap 'shaunsingh/SFMono-Nerd-Font-Ligaturized'
 
 brew 'awscli'
