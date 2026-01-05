@@ -1,1 +1,1 @@
-wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
+wget -qO- https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh | sh
