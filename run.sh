@@ -10,3 +10,6 @@ ln -sf $PWD/git/gitignore ~/.gitignore
 ln -sf $PWD/git/gitconfig ~/.gitconfig
 ln -sf $PWD/hyper/hyper.js ~/.hyper.js
 ln -sf $PWD/zsh/zshrc ~/.zshrc
+
+# run post install scripts
+find . -name post-install.sh | while read installer; do sh -c "${installer}"; done
