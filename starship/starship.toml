@@ -14,7 +14,7 @@ format = " [$branch]($style)"
 
 [git_status]
 style = "yellow"
-format = "[$all_status$ahead_behind]($style)"
+format = " [$all_status$ahead_behind]($style)"
 
 [cmd_duration]
 min_time = 2000
@@ -22,6 +22,7 @@ format = " [$duration](cyan)"
 
 [status]
 disabled = false
+style = "bold red"
 format = " [$status]($style)"
 
 [character]
