@@ -16,6 +16,18 @@ ui = true
 excludesfile = ~/.gitignore
 editor = code --wait
 autocrlf = input
+pager = delta
+
+[delta]
+features = decorations
+line-numbers = true
+syntax-theme = base16
+
+[delta "decorations"]
+commit-decoration-style = bold yellow
+file-style = bold yellow
+file-decoration-style = none
+hunk-header-decoration-style = none
 [apply]
 whitespace = nowarn
 [mergetool]
@@ -31,3 +43,27 @@ autocorrect = 1
 # Setting to git 2.0 default to suppress warning message
 default = simple
 followTags = true
+
+[init]
+defaultBranch = master
+
+[fetch]
+prune = true
+pruneTags = true
+
+[pull]
+rebase = false
+
+[rebase]
+autoStash = true
+autoSquash = true
+
+[rerere]
+enabled = true
+
+[merge]
+conflictstyle = zdiff3
+
+[diff]
+algorithm = histogram
+colorMoved = zebra
