@@ -4,6 +4,8 @@ tap 'shaunsingh/SFMono-Nerd-Font-Ligaturized'
 
 brew 'bat'
 brew 'coreutils'
+brew 'delta'
+brew 'direnv'
 brew 'eza'
 brew 'fd'
 brew 'fzf'
