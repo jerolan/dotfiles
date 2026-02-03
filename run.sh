@@ -1,15 +1,6 @@
-set -e
+#!/usr/bin/env bash
 
-# find the installers and run them iteratively
-find . -name install.sh | while read installer; do sh -c "${installer}"; done
+set -euo pipefail
 
-brew bundle
-
-# Link System files
-ln -sf $PWD/git/gitignore ~/.gitignore
-ln -sf $PWD/git/gitconfig ~/.gitconfig
-ln -sf $PWD/hyper/hyper.js ~/.hyper.js
-ln -sf $PWD/zsh/zshrc ~/.zshrc
-
-# run post install scripts
-find . -name post-install.sh | while read installer; do sh -c "${installer}"; done
+ROOT_DIR="$(CDPATH='' cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec "$ROOT_DIR/install.sh"
