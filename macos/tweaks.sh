@@ -1,3 +1,8 @@
+#!/bin/sh
+
+set -e
+
+# One-time macOS UI defaults; safe to re-run but runs during install only.
 # Always open everything in Finder's list view.
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
