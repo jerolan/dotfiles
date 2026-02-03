@@ -1,12 +1,11 @@
-# setup fnm
-eval "$(fnm env)"
+# fnm: ensure its bin is on PATH and activate shim env
+if [ -x /opt/homebrew/opt/fnm/bin/fnm ]; then
+  eval "$('/opt/homebrew/opt/fnm/bin/fnm' env --use-on-cd)"
+elif [ -x "$HOME/.fnm/fnm" ]; then
+  eval "$("$HOME/.fnm/fnm" env --use-on-cd)"
+fi
 
-# setup github copilot
-eval "$(github-copilot-cli alias -- "$0")"
-
-# bun completions
-[ -s "/Users/42430/.bun/_bun" ] && source "/Users/42430/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# bun: add to PATH if installed
+if [ -d "$HOME/.bun/bin" ]; then
+  export PATH="$HOME/.bun/bin:$PATH"
+fi
