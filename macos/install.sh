@@ -9,3 +9,8 @@ fi
 
 echo "› sudo softwareupdate -i -a"
 sudo softwareupdate -i -a
+
+SCRIPT_DIR="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
+if [ -f "$SCRIPT_DIR/tweaks.sh" ]; then
+  sh "$SCRIPT_DIR/tweaks.sh"
+fi
