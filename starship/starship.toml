@@ -1,0 +1,29 @@
+add_newline = false
+command_timeout = 800
+
+format = "$directory$git_branch$git_status$cmd_duration$status$character"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+style = "bold green"
+format = " [$branch]($style)"
+
+[git_status]
+style = "yellow"
+format = "[$all_status$ahead_behind]($style)"
+
+[cmd_duration]
+min_time = 2000
+format = " [$duration](cyan)"
+
+[status]
+disabled = false
+format = " [$status]($style)"
+
+[character]
+success_symbol = "> "
+error_symbol = "! "
