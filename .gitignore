@@ -1,3 +1,5 @@
 git/gitconfig.local.symlink
 internal/*
 .DS_Store
+opencode/
+raycast-script-commands/
