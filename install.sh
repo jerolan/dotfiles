@@ -34,5 +34,6 @@ ln -sf "$ROOT_DIR/git/gitignore" "$HOME/.gitignore"
 ln -sf "$ROOT_DIR/git/gitconfig" "$HOME/.gitconfig"
 ln -sf "$ROOT_DIR/hyper/hyper.js" "$HOME/.hyper.js"
 ln -sf "$ROOT_DIR/zsh/zshrc" "$HOME/.zshrc"
+ln -sf "$ROOT_DIR/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 
 run_installer "$ROOT_DIR/node/post-install.sh"
