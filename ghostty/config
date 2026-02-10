@@ -47,3 +47,56 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+# Font
+font-family = ""
+font-family = "Fantasque Sans Mono"
+font-size = 18
+
+# Spacing
+window-padding-x = 15
+window-padding-y = 15
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Keep cursor style stable (shell integration often sets a bar at prompt).
+shell-integration-features = no-cursor
+
+# Behavior
+copy-on-select = true
+
+# Make unsafe pastes require confirmation.
+clipboard-paste-protection = true
+
+# Clipboard security posture: allow writes, but ask before reads (OSC 52 etc.).
+clipboard-write = allow
+clipboard-read = ask
+
+# Prevent invisible/low-contrast text when apps pick bad colors.
+minimum-contrast = 1.1
+
+# More usable scrollback (bytes, per surface). 64MiB is a good baseline.
+scrollback-limit = 67108864
+
+# Ergonomics
+mouse-hide-while-typing = true
+mouse-shift-capture = never
+right-click-action = copy-or-paste
+
+# Aesthetics: balance remainder pixels around the grid.
+window-padding-balance = true
+
+# Defense-in-depth: keep title reporting disabled (should already be the default).
+title-report = false
+
+# Disable bell/attention/title indicators.
+bell-features = no-system,no-audio,no-attention,no-title,no-border
+
+# Ensure new windows use the configured font-size (instead of inheriting).
+window-inherit-font-size = false
+
+# Optional: if you want more vertical breathing room like Hyper's lineHeight=1.6,
+# start small and tune (wrong values can make the grid unusable):
+adjust-cell-height = 5%
