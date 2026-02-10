@@ -48,6 +48,9 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
+# Theme
+theme = Apple System Colors Light
+
 # Font
 font-family = ""
 font-family = "Fantasque Sans Mono"
