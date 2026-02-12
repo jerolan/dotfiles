@@ -1,0 +1,113 @@
+# ---------------------------------------------
+# aws_sso_login_and_default
+# Makes a given SSO profile the [default] profile
+# after successful aws sso login.
+# Compatible with macOS (BSD awk) and Linux.
+# ---------------------------------------------
+
+aws_make_default_from_profile() {
+  local prof="$1"
+  local cfg="${AWS_CONFIG_FILE:-$HOME/.aws/config}"
+
+  if [[ -z "$prof" ]]; then
+    echo "Usage: aws_make_default_from_profile <profile-name>"
+    return 2
+  fi
+
+  if [[ ! -f "$cfg" ]]; then
+    echo "AWS config not found: $cfg"
+    return 2
+  fi
+
+  # Helper to extract a key from [profile <name>]
+  _aws_cfg_get() {
+    local key="$1"
+    awk -v p="$prof" -v k="$key" -F '[[:space:]]*=[[:space:]]*' '
+      $0 == "[profile " p "]" {in_section=1; next}
+      in_section && $0 ~ /^\[/ {in_section=0}
+      in_section && $1==k {print $2; exit}
+    ' "$cfg"
+  }
+
+  local sso_session sso_account_id sso_role_name region output
+
+  sso_session="$(_aws_cfg_get sso_session)"
+  sso_account_id="$(_aws_cfg_get sso_account_id)"
+  sso_role_name="$(_aws_cfg_get sso_role_name)"
+  region="$(_aws_cfg_get region)"
+  output="$(_aws_cfg_get output)"
+
+  if [[ -z "$sso_session" || -z "$sso_account_id" || -z "$sso_role_name" ]]; then
+    echo "Profile '$prof' does not look like a valid SSO profile."
+    return 1
+  fi
+
+  [[ -z "$region" ]] && region="us-east-1"
+  [[ -z "$output" ]] && output="json"
+
+  local tmp
+  tmp="$(mktemp "${cfg}.tmp.XXXXXX")" || return 1
+
+  awk -v ss="$sso_session" \
+      -v aid="$sso_account_id" \
+      -v rn="$sso_role_name" \
+      -v rg="$region" \
+      -v out="$output" '
+    function print_default() {
+      print "[default]"
+      print "sso_session = " ss
+      print "sso_account_id = " aid
+      print "sso_role_name = " rn
+      print "region = " rg
+      print "output = " out
+      print ""
+    }
+
+    BEGIN {in_default=0; default_seen=0}
+
+    /^\[default\]$/ {
+      default_seen=1
+      in_default=1
+      print_default()
+      next
+    }
+
+    in_default && /^\[/ {in_default=0}
+    in_default {next}
+
+    {print}
+  ' "$cfg" > "$tmp"
+
+  if ! grep -q '^\[default\]$' "$cfg"; then
+    {
+      echo "[default]"
+      echo "sso_session = $sso_session"
+      echo "sso_account_id = $sso_account_id"
+      echo "sso_role_name = $sso_role_name"
+      echo "region = $region"
+      echo "output = $output"
+      echo ""
+      cat "$cfg"
+    } > "$cfg.new"
+
+    mv "$cfg.new" "$cfg"
+    rm -f "$tmp"
+  else
+    mv "$tmp" "$cfg"
+  fi
+
+  echo "Updated [default] to profile: $prof"
+}
+
+aws_sso_login_and_default() {
+  local prof="$1"
+
+  if [[ -z "$prof" ]]; then
+    echo "Usage: aws_sso_login_and_default <profile-name>"
+    return 2
+  fi
+
+  aws sso login --profile "$prof" || return $?
+
+  aws_make_default_from_profile "$prof" || return $?
+}
