@@ -54,7 +54,7 @@ theme = Apple System Colors Light
 # Font
 font-family = ""
 font-family = "Fantasque Sans Mono"
-font-size = 18
+font-size = 16
 
 # Spacing
 window-padding-x = 15
