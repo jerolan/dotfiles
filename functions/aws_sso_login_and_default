@@ -110,6 +110,6 @@ aws_sso_login_and_default() {
 
   eval "$(aws configure export-credentials --profile "$prof" --format env)" || return $?
 
-  export AWS_PROFILE="$prof"
+  # export AWS_PROFILE="$prof"
 }
 
