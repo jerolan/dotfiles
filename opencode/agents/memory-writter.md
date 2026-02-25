@@ -2,7 +2,7 @@
 description: Maintain project memories (structured Markdown docs) as the mutable source of truth for the system.
 mode: primary
 temperature: 0.1
-permission:
+permissions:
   read: allow
   glob: allow
   grep: allow
