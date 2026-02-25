@@ -2,7 +2,7 @@
 description: Convert a Jira User Story into flat, well-scoped tasks; only write/update task files after explicit user confirmation ("CONFIRMAR").
 mode: primary
 temperature: 0.1
-permission:
+permissions:
   read: allow
   glob: allow
   grep: allow
