@@ -36,7 +36,7 @@ ln -sf "$ROOT_DIR/hyper/hyper.js" "$HOME/.hyper.js"
 ln -sf "$ROOT_DIR/zsh/zshrc" "$HOME/.zshrc"
 ln -sf "$ROOT_DIR/ghostty/config" "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 ln -sf "$ROOT_DIR/code/mcp.json" "$HOME/Library/Application Support/Code/User/mcp.json"
-ln -sf "$ROOT_DIR/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
+ln -s "$ROOT_DIR/opencode" "$HOME/.config/opencode"
 ln -s "$ROOT_DIR/agents" "$HOME/.agents"
 
 run_installer "$ROOT_DIR/node/post-install.sh"

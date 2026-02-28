@@ -1,6 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "instructions": ["./prompts/skill-adherence-rules.md"],
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "openai/gpt-5.3-codex"
+    },
+    "plan": {
+      "mode": "primary",
+      "model": "openai/gpt-5.2"
+    }
+  },
   "provider": {
     "github-copilot": {
       "models": {
@@ -24,6 +34,11 @@
       "enabled": true,
       "type": "local"
     },
+    "context7": {
+      "type": "local",
+      "command": ["npx", "-y", "@upstash/context7-mcp"],
+      "enabled": true
+    },
     "pencil": {
       "command": [
         "/Users/jerolan/.vscode/extensions/highagency.pencildev-0.6.26/out/mcp-server-darwin-arm64",
@@ -32,11 +47,6 @@
       ],
       "enabled": true,
       "type": "local"
-    },
-    "context7": {
-      "type": "local",
-      "command": ["npx", "-y", "@upstash/context7-mcp"],
-      "enabled": true
     }
   }
 }
