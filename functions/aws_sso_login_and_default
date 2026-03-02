@@ -11,7 +11,8 @@ _aws_cfg_get_profile_value() {
   local prof="$2"
   local key="$3"
 
-  # Lee una clave puntual dentro de [profile <name>] en ~/.aws/config
+  # Read a single key inside [profile <name>] from ~/.aws/config.
+  # Example: key=region -> returns us-east-1
   awk -v p="$prof" -v k="$key" -F '[[:space:]]*=[[:space:]]*' '
     $0 == "[profile " p "]" { in_section=1; next }
     in_section && /^\[/ { in_section=0 }
@@ -25,7 +26,8 @@ _aws_upsert_default_section() {
   local tmp
   local block_file
 
-  # Escritura atómica: generar temporal y luego reemplazar el archivo final
+  # Atomic write: build a temp file first, then replace the destination file.
+  # This avoids partial writes if the process is interrupted.
   tmp="$(mktemp "${file}.tmp.XXXXXX")" || return 1
   block_file="$(mktemp "${file}.block.XXXXXX")" || {
     rm -f "$tmp"
@@ -44,7 +46,7 @@ _aws_upsert_default_section() {
       close(bf)
     }
 
-    # Si existe [default], lo reemplazamos por el bloque nuevo
+    # If [default] exists, replace that entire section with the new block.
     /^\[default\]$/ {
       if (!replaced) {
         print_block()
@@ -61,7 +63,7 @@ _aws_upsert_default_section() {
     { print }
 
     END {
-      # Si no existe [default], se agrega al final
+      # If [default] does not exist, append it at the end.
       if (!replaced) {
         if (NR > 0) print ""
         print_block()
@@ -93,7 +95,8 @@ aws_make_default_from_profile() {
 
   local sso_session sso_account_id sso_role_name region output block
 
-  # Extrae campos SSO del perfil origen
+  # Extract SSO fields from the source profile.
+  # Example source profile: [profile CBGBMRecordkeepingDevDev-392007469184]
   sso_session="$(_aws_cfg_get_profile_value "$cfg" "$prof" sso_session)"
   sso_account_id="$(_aws_cfg_get_profile_value "$cfg" "$prof" sso_account_id)"
   sso_role_name="$(_aws_cfg_get_profile_value "$cfg" "$prof" sso_role_name)"
@@ -108,7 +111,8 @@ aws_make_default_from_profile() {
   [[ -z "$region" ]] && region="us-east-1"
   [[ -z "$output" ]] && output="json"
 
-  # Bloque final que será escrito como [default] en ~/.aws/config
+  # Final block written as [default] in ~/.aws/config.
+  # Example output keys: sso_session, sso_account_id, sso_role_name, region, output
   block="$(cat <<EOF
 [default]
 sso_session = $sso_session
@@ -134,13 +138,16 @@ aws_write_default_credentials_from_profile() {
 
   local creds aws_access_key_id aws_secret_access_key aws_session_token block
 
-  # Intenta formato sin 'export' (cli v2 nuevo), con fallback al formato clásico
+  # Try output without "export" first (newer AWS CLI), then fallback to classic format.
+  # Possible lines:
+  #   AWS_ACCESS_KEY_ID=...
+  #   export AWS_ACCESS_KEY_ID=...
   creds="$(aws configure export-credentials --profile "$prof" --format env-no-export 2>/dev/null)"
   if [[ -z "$creds" ]]; then
     creds="$(aws configure export-credentials --profile "$prof" --format env 2>/dev/null)" || return $?
   fi
 
-  # Parsea variables exportadas por AWS CLI
+  # Parse credential lines returned by AWS CLI.
   while IFS= read -r line; do
     line="${line#export }"
     case "$line" in
@@ -154,7 +161,7 @@ aws_write_default_credentials_from_profile() {
   aws_secret_access_key="${aws_secret_access_key%\"}"; aws_secret_access_key="${aws_secret_access_key#\"}"
   aws_session_token="${aws_session_token%\"}"; aws_session_token="${aws_session_token#\"}"
 
-  # Para SSO deben existir las 3: access key, secret y session token
+  # For SSO, all three are required: access key, secret key, and session token.
   if [[ -z "$aws_access_key_id" || -z "$aws_secret_access_key" || -z "$aws_session_token" ]]; then
     echo "Could not export credentials from profile '$prof'."
     return 1
@@ -163,7 +170,8 @@ aws_write_default_credentials_from_profile() {
   mkdir -p "$(dirname "$credf")" || return 1
   [[ -f "$credf" ]] || : > "$credf"
 
-  # Bloque final que será escrito como [default] en ~/.aws/credentials
+  # Final block written as [default] in ~/.aws/credentials.
+  # This is what most SDKs and tools read natively.
   block="$(cat <<EOF
 [default]
 aws_access_key_id = $aws_access_key_id
@@ -181,15 +189,19 @@ aws_sso_login_and_default() {
   local prof="$1"
   [[ -z "$prof" ]] && { echo "Usage: aws_sso_login_and_default <profile-name>"; return 2; }
 
-  # Permite a SDKs/CLI leer también ~/.aws/config cuando aplique
+  # Allow SDKs/CLI to also read ~/.aws/config when needed.
   export AWS_SDK_LOAD_CONFIG=1
 
-  # 1) Login SSO, 2) sincroniza [default] en config, 3) persiste credenciales temporales
+  # Flow:
+  # 1) SSO login
+  # 2) Sync [default] in config
+  # 3) Persist temporary credentials in credentials
   aws sso login --profile "$prof" || return $?
   aws_make_default_from_profile "$prof" || return $?
   aws_write_default_credentials_from_profile "$prof" || return $?
 
-  # Evita que variables del shell sobreescriban el modo default-file
+  # Prevent shell env vars from overriding default-file behavior.
+  # Example: if AWS_PROFILE is set, many tools ignore [default].
   unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_PROFILE AWS_DEFAULT_PROFILE
 
   echo "SSO ready: [default] updated in config + credentials"
