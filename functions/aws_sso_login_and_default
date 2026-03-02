@@ -23,17 +23,31 @@ _aws_upsert_default_section() {
   local file="$1"
   local block="$2"
   local tmp
+  local block_file
 
   # Escritura atómica: generar temporal y luego reemplazar el archivo final
   tmp="$(mktemp "${file}.tmp.XXXXXX")" || return 1
+  block_file="$(mktemp "${file}.block.XXXXXX")" || {
+    rm -f "$tmp"
+    return 1
+  }
+  printf '%s\n' "$block" > "$block_file" || {
+    rm -f "$tmp" "$block_file"
+    return 1
+  }
 
-  awk -v b="$block" '
+  awk -v bf="$block_file" '
     BEGIN { in_default=0; replaced=0 }
+
+    function print_block(line) {
+      while ((getline line < bf) > 0) print line
+      close(bf)
+    }
 
     # Si existe [default], lo reemplazamos por el bloque nuevo
     /^\[default\]$/ {
       if (!replaced) {
-        print b
+        print_block()
         print ""
         replaced=1
       }
@@ -50,15 +64,16 @@ _aws_upsert_default_section() {
       # Si no existe [default], se agrega al final
       if (!replaced) {
         if (NR > 0) print ""
-        print b
+        print_block()
         print ""
       }
     }
   ' "$file" > "$tmp" || {
-    rm -f "$tmp"
+    rm -f "$tmp" "$block_file"
     return 1
   }
 
+  rm -f "$block_file"
   mv "$tmp" "$file"
 }
 
