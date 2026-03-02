@@ -187,10 +187,19 @@ EOF
 
 aws_sso_login_and_default() {
   local prof="$1"
+  local cfg="${AWS_CONFIG_FILE:-$HOME/.aws/config}"
+  local target_account effective_default_account
   [[ -z "$prof" ]] && { echo "Usage: aws_sso_login_and_default <profile-name>"; return 2; }
 
   # Allow SDKs/CLI to also read ~/.aws/config when needed.
   export AWS_SDK_LOAD_CONFIG=1
+
+  target_account="$(_aws_cfg_get_profile_value "$cfg" "$prof" sso_account_id)"
+  if [[ -n "$target_account" ]]; then
+    echo "Starting SSO login for profile: $prof (target account: $target_account)"
+  else
+    echo "Starting SSO login for profile: $prof"
+  fi
 
   # Flow:
   # 1) SSO login
@@ -204,6 +213,17 @@ aws_sso_login_and_default() {
   # Example: if AWS_PROFILE is set, many tools ignore [default].
   unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_SECURITY_TOKEN AWS_PROFILE AWS_DEFAULT_PROFILE
 
-  echo "SSO ready: [default] updated in config + credentials"
+  effective_default_account="$(awk -F '[[:space:]]*=[[:space:]]*' '
+    $0 == "[default]" { in_default=1; next }
+    in_default && /^\[/ { in_default=0 }
+    in_default && $1 == "sso_account_id" { print $2; exit }
+  ' "$cfg")"
+
+  if [[ -n "$target_account" && -n "$effective_default_account" && "$target_account" != "$effective_default_account" ]]; then
+    echo "Warning: requested account ($target_account) does not match [default] account ($effective_default_account)."
+    return 1
+  fi
+
+  echo "SSO ready: [default] updated in config + credentials (account: ${effective_default_account:-unknown})"
 }
 
