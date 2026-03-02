@@ -40,6 +40,14 @@ do
   source $file
 done
 
+# avoid glob errors when completion dirs are empty
+setopt NULL_GLOB
+
+# add Homebrew's zsh site-functions to `fpath` so `compinit` can find them
+if command -v brew >/dev/null 2>&1; then
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -60,42 +68,3 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
-
-# bun completions
-[ -s "/Users/jerolan/.bun/_bun" ] && source "/Users/jerolan/.bun/_bun"
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
-
-# fnm
-FNM_PATH="/opt/homebrew/opt/fnm/bin"
-if [ -d "$FNM_PATH" ]; then
-  eval "`fnm env`"
-fi
