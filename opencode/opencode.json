@@ -29,9 +29,14 @@
   },
   "mcp": {
     "microsoft/playwright-mcp": {
-      "command": ["npx", "@playwright/mcp@latest"],
-      "enabled": true,
-      "type": "local"
+      "type": "local",
+      "command": [
+        "npx",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint",
+        "http://127.0.0.1:9222"
+      ],
+      "enabled": true
     },
     "context7": {
       "type": "local",
@@ -40,7 +45,7 @@
     },
     "pencil": {
       "command": [
-        "/Users/jerolan/.vscode/extensions/highagency.pencildev-0.6.26/out/mcp-server-darwin-arm64",
+        "/Users/jerolan/.vscode/extensions/highagency.pencildev-0.6.28/out/mcp-server-darwin-arm64",
         "--app",
         "visual_studio_code"
       ],
