@@ -15,3 +15,4 @@ For every user request, you must first evaluate the available skills and decide 
 ## Default behavior
 
 When a user request reasonably matches a skill description, prefer loading the skill.
+You can load as many skills as you think are relevant.
