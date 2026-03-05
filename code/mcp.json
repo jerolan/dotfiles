@@ -14,7 +14,7 @@
       "version": "1.1.1"
     },
     "pencil": {
-      "command": "/Users/jerolan/.vscode/extensions/highagency.pencildev-0.6.28/out/mcp-server-darwin-arm64",
+      "command": "/Users/jerolan/.vscode/extensions/highagency.pencildev-0.6.30/out/mcp-server-darwin-arm64",
       "args": ["--app", "visual_studio_code"],
       "env": {},
       "type": "stdio"
